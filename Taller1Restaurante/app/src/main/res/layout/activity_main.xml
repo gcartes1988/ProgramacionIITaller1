@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Logo Header -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <!-- Pastel de Choclo -->
+    <ImageView
+        android:id="@+id/imgPastel"
+        android:layout_width="98dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:srcCompat="@drawable/pastel"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/txtPastel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Pastel de Choclo"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/imgPastel"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtCantPastel"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Cant."
+        app:layout_constraintStart_toStartOf="@id/txtPastel"
+        app:layout_constraintTop_toTopOf="@id/qltyPastel"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/qltyPastel"
+        android:layout_width="89dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/txtCantPastel"
+        app:layout_constraintTop_toBottomOf="@id/txtPastel"
+        tools:ignore="Autofill,HardcodedText,LabelFor,DuplicateSpeakableTextCheck" />
+
+    <!-- Cazuela -->
+    <ImageView
+        android:id="@+id/imgCazuela"
+        android:layout_width="100dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPastel"
+        app:srcCompat="@drawable/cazuela" />
+
+    <TextView
+        android:id="@+id/txtCazuela"
+        android:layout_width="184dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:text="Cazuela de Vacuno"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/imgCazuela"
+        app:layout_constraintTop_toTopOf="@id/imgCazuela"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txtCantCazuela"
+        android:layout_width="46dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:text="Cant."
+        app:layout_constraintStart_toStartOf="@id/txtCazuela"
+        app:layout_constraintTop_toBottomOf="@id/txtCazuela"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/qltyCazuela"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@id/txtCantCazuela"
+        app:layout_constraintTop_toBottomOf="@id/txtCazuela"
+        tools:ignore="Autofill,HardcodedText,LabelFor" />
+
+    <!-- Subtotal -->
+    <TextView
+        android:id="@+id/txtSubTotalComida"
+        android:layout_width="100dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="60dp"
+        android:text="Comida: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/imgCazuela"
+        app:layout_constraintTop_toBottomOf="@id/imgCazuela"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/valueSubTotal"
+        android:layout_width="85dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="150dp"
+        android:text="@string/_0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/txtSubTotalComida"
+        app:layout_constraintTop_toTopOf="@id/txtSubTotalComida"
+        tools:ignore="TextSizeCheck" />
+
+    <!-- Propina Switch -->
+    <Switch
+        android:id="@+id/tipSwitch"
+        android:layout_width="127dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:text="Propina"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/txtSubTotalComida"
+        app:layout_constraintTop_toBottomOf="@id/txtSubTotalComida"
+        tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/propinaValue"
+        android:layout_width="86dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="8dp"
+        android:text="$0"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/tipSwitch"
+        app:layout_constraintTop_toTopOf="@id/tipSwitch"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <!-- Total -->
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="48dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="16dp"
+        android:text="Total"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tipSwitch"
+        app:layout_constraintTop_toBottomOf="@id/tipSwitch"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="150dp"
+        android:text="$0"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/txtTotal"
+        app:layout_constraintTop_toTopOf="@id/txtTotal"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
